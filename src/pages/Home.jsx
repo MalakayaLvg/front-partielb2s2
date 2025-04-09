@@ -16,6 +16,11 @@ const Home = () => {
                     Panier
                 </button>
             </Link>
+            <Link to="/login" className="mx-1">
+                <button className="btn btn-secondary">
+                    Login
+                </button>
+            </Link>
         </>
     )
 }
