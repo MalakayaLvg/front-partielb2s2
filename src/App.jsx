@@ -6,6 +6,7 @@ import { AuthProvider } from "./context/AuthContext.jsx";
 import Register from "./pages/Register.jsx";
 import Scan from "./pages/Scan.jsx";
 import Cart from "./pages/Cart.jsx";
+import Order from "./pages/Order.jsx";
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
                     <Route path="/register" element={<Register />} />
                     <Route path="/scan" element={<Scan />} />
                     <Route path="/cart" element={<Cart />} />
+                    <Route path="/order" element={<Order />} />
                 </Routes>
             </Router>
         </AuthProvider>
