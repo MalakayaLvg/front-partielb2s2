@@ -7,7 +7,6 @@ import Register from "./pages/Register.jsx";
 import Scan from "./pages/Scan.jsx";
 import Cart from "./pages/Cart.jsx";
 import Order from "./pages/Order.jsx";
-import Navbar from "./components/Navbar.jsx";
 
 function App() {
 
@@ -15,7 +14,6 @@ function App() {
     return (
         <AuthProvider>
             <Router>
-                <Navbar />
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/login" element={<Login />} />

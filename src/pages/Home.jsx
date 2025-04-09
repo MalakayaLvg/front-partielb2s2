@@ -21,6 +21,11 @@ const Home = () => {
                     Login
                 </button>
             </Link>
+            <Link to="/register" className="mx-1">
+                <button className="btn btn-secondary">
+                    register
+                </button>
+            </Link>
             <Link to="/order" className="mx-1">
                 <button className="btn btn-secondary">
                     Mes commandes
