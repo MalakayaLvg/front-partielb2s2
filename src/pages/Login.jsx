@@ -15,7 +15,7 @@ function Login() {
             const response = await axios.post('https://back-partiel.malakayalauvergnat.com/api/login_check', {
                 username,
                 password
-            })
+            },)
             login(username, response.data.token)
             console.log('réussi')
             navigate('/')

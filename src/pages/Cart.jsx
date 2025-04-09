@@ -9,6 +9,7 @@ const Cart = () => {
     const getCart = async () => {
         try {
             const token = localStorage.getItem('token');
+            console.log(token)
             const response = await axios.get('https://back-partiel.malakayalauvergnat.com/api/cart',{
                 headers : {
                     Authorization : `Bearer ${token}`
