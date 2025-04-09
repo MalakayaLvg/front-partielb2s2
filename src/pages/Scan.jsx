@@ -1,11 +1,12 @@
 import QRScanner from "../components/QRScanner.jsx";
 import axios from "axios";
 import {useState} from "react";
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 
 const Scan = () => {
 
     const [ status, setStatus ] = useState("")
+    const navigate = useNavigate()
 
     const handleScanSuccess = async (data) => {
         console.log("Données du QR code:", data);
@@ -27,7 +28,8 @@ const Scan = () => {
                 }
             );
             setStatus(response.data)
-            console.log("Inscription réussie", response.data);
+            alert(response.data);
+            navigate('/')
         } catch (error) {
             console.log("Erreur lors de l'inscription:", error);
         }
