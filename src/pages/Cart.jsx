@@ -3,29 +3,28 @@ import axios from "axios";
 import {Link} from "react-router-dom";
 
 const Cart = () => {
-
-    const [ items, setItems ] = useState({})
+    // Initialiser avec un tableau vide plutôt qu'un objet
+    const [items, setItems] = useState([]);
 
     const getCart = async () => {
         try {
             const token = localStorage.getItem('token');
-            console.log(token)
-            const response = await axios.get('https://back-partiel.malakayalauvergnat.com/api/cart',{
-                headers : {
-                    Authorization : `Bearer ${token}`
+            console.log(token);
+            const response = await axios.get('https://back-partiel.malakayalauvergnat.com/api/cart', {
+                headers: {
+                    Authorization: `Bearer ${token}`
                 }
-            })
-            setItems(response.data)
-            console.log(items)
+            });
+            setItems(response.data.cartItems || []);
+            console.log(response.data.cartItems);
         }
         catch (error) {
-            console.log(error)
+            console.log(error);
         }
-
     }
 
     useEffect(() => {
-        getCart()
+        getCart();
     }, []);
 
     return(
@@ -35,10 +34,10 @@ const Cart = () => {
                 {items.length > 0 ? (
                     <ul className="cart-items">
                         {items.map((item) => (
-                            <li key={item.id} className="cart-item">
-                                <div className="item-details">
-                                    <span className="item-name">{item.name}</span>
-                                    <span className="item-price">{item.price} €</span>
+                            <li key={item.productId} className="cart-item">
+                                <div className="item-details d-flex flex-column">
+                                    <span className="item-name">{item.productName} : {item.price} €</span>
+                                    <span className="item-quantity">Quantité: {item.quantity}</span>
                                 </div>
                             </li>
                         ))}
