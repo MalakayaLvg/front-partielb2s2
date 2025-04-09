@@ -4,6 +4,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Login from "./pages/Login.jsx";
 import { AuthProvider } from "./context/AuthContext.jsx";
 import Register from "./pages/Register.jsx";
+import Scan from "./pages/Scan.jsx";
+import Cart from "./pages/Cart.jsx";
 
 function App() {
 
@@ -15,6 +17,8 @@ function App() {
                     <Route path="/" element={<Home />} />
                     <Route path="/login" element={<Login />} />
                     <Route path="/register" element={<Register />} />
+                    <Route path="/scan" element={<Scan />} />
+                    <Route path="/cart" element={<Cart />} />
                 </Routes>
             </Router>
         </AuthProvider>
